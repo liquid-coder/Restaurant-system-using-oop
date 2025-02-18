@@ -46,3 +46,11 @@ class Employee(User):
         self.salary = salary
         self.starting_date = starting_date
         self.department = department      
+class Chef(Employee):
+    def __init__(self,name,phone,email,address,salary,starting_date,department,cooking_item):
+        super().__init__(name,phone,email,address,salary,starting_date,department)
+        self.cooking_item = cooking_item 
+        
+class Server(Employee):
+    def __init__(self,name,phone,email,address,salary,starting_date,department):
+        super().__init__(name,phone,email,address,salary,starting_date,department)
