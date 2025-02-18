@@ -1,6 +1,7 @@
 from menu import *
 from restaurant import *
-from users import * 
+from users import *
+from order import * 
 def main():
     menu = Menu()
     pizza1 = Pizza('Overload Pizza',750,'large',['meat','onion','cheese'])
@@ -36,5 +37,14 @@ def main():
     restaurant.add_employee('server',server)
     
     restaurant.show_employees()
+    
+    customer1 = Customer('Anik',6,'anik@gmail.com','dhaka',10000)
+    order1 = Order(customer1,[pizza3,drinks3])
+    customer1.pay_for_order(order1)
+    restaurant.add_order(order1)
+    
+    restaurant.receive_payment(order1,200,customer1)
+
+
 if __name__ == '__main__':
     main()

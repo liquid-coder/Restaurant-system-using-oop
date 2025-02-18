@@ -4,6 +4,7 @@ class Restaurant:
         self.chef = None
         self.server = None
         self.manager = None
+        self.order = []
         self.menu = menu
         self.rent = rent
         self.revenue = 0
@@ -18,6 +19,9 @@ class Restaurant:
             self.server  = employee
         elif employee_type == 'manager':
             self.manager = employee
+    
+    def add_order(self,order):
+        self.orders.append(order)
       
     def receive_payment(self,order,amount,customer):
         if amount>= order.bill:
@@ -25,6 +29,8 @@ class Restaurant:
             self.balance += order.bill
             customer.due_amount = 0
             return amount - order.bill
+        else:
+            print('Not enough money')
         
     def pay_expense(self,amount,description):
         if amount<self.balance:
