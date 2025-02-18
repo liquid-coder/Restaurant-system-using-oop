@@ -1,5 +1,6 @@
 from menu import *
-
+from restaurant import *
+from users import * 
 def main():
     menu = Menu()
     pizza1 = Pizza('Overload Pizza',750,'large',['meat','onion','cheese'])
@@ -23,5 +24,17 @@ def main():
     
     menu.show_menu()
     
+    restaurant = Restaurant ('Dhom_Machale_Restaurant',3000, menu)
+    
+    manager = Manager('Fardeen',5,'mdfardeenislam28@gmail.com','dhaka',3000,'28/09/20023','finance')
+    restaurant.add_employee('manager',manager)
+
+    chef = Chef('Anik Baburchi',6,'fianik27@gmail.com','dhaka',3500,'22/5/2024','Chef','everything')   
+    restaurant.add_employee('chef',chef)
+    
+    server = Server('Chotu',6,'fianik28@gmail.com','restaurant',200,'1/1/2025','server') 
+    restaurant.add_employee('server',server)
+    
+    restaurant.show_employees()
 if __name__ == '__main__':
     main()
